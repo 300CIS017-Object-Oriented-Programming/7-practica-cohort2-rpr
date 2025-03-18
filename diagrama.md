@@ -1,7 +1,7 @@
 ```mermaid
 graph TD;
 classDiagram
-class Producto{
+class Producto {
     -string nombre
     -int codigo
     -int precio
@@ -13,7 +13,7 @@ class Producto{
     
 
 } 
-class Venta{
+class Venta {
     -int id
     - Cliente cliente
     -List <Producto> productosVendidos
@@ -23,7 +23,7 @@ class Venta{
     +float calcularTotal()
     +void mostrarDetalleVenta()
 }
-class Cliente{
+class Cliente {
     -int id
     -string nombre
     -List <Venta> compras
@@ -32,7 +32,7 @@ class Cliente{
     +void mostrarHistorialCompras()
 } 
 
-class Tienda{
+class Tienda {
     -List<Producto> productos
     -List<Venta> ventas
     -List<Cliente> clientes
