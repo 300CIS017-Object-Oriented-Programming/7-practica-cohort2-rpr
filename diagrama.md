@@ -2,56 +2,52 @@
 graph TD;
 classDiagram
     class Producto {
-        -string nombre
-        -int codigo
-        -int precio
-        -int cantidad
-
-        +Producto(string nombre, int codigo, float precio, int cantidad)
+        string codigo
+        string nombre
+        float precio
+        int stock
         +bool descontarStock(int cantidad)
         +void agregarStock(int cantidad)
     }
 
-    class Venta {
-        -int id
-        -Cliente cliente
-        -List<Producto> productosVendidos
+    class Cliente {
+        int id
+        string nombre
+        Venta* compras
+        +void agregarCompra(Venta* venta)
+        +void mostrarHistorialCompras()
+    }
 
+    class Venta {
+        int id
+        Cliente* cliente
+        map<Producto*, int> productosVendidos
         +Venta(Cliente* cliente)
         +void agregarProductoVendido(Producto* producto, int cantidad)
         +float calcularTotal()
         +void mostrarDetalleVenta()
     }
 
-    class Cliente {
-        -int id
-        -string nombre
-        -List<Venta> compras
-
-        +void agregarCompra(Venta* venta)
-        +void mostrarHistorialCompras()
-    }
-
     class Tienda {
-        -List<Producto> productos
-        -List<Venta> ventas
-        -List<Cliente> clientes
-
-        +void agregarProducto(int codigo, string nombre, float precio, int stockInicial)
+        list<Producto*> productos
+        list<Cliente*> clientes
+        list<Venta*> ventas
+        +void agregarProducto(string codigo, string nombre, float precio, int stockInicial)
         +void registrarVenta(int idCliente)
-        +void reabastecerProducto(int codigoProducto, int cantidad)
-        +Producto* buscarProducto(int codigo)
+        +void reabastecerProducto(string codigoProducto, int cantidad)
+        +Producto* buscarProducto(string codigo)
         +Cliente* buscarCliente(int idCliente)
         +void listarProductos()
         +void mostrarVentas()
         +float calcularValorInventario()
     }
 
-    Tienda o-- Producto
-    Tienda o-- Venta
-    Tienda o-- Cliente
-    Venta *-- Producto
-    Cliente *-- Venta
+    Cliente "1" --> "*" Venta : realiza
+    Venta "1" --> "*" Producto : incluye
+    Tienda "1" --> "*" Producto : gestiona
+    Tienda "1" --> "*" Cliente : registra
+    Tienda "1" --> "*" Venta : controla
+
 
 
 ```
