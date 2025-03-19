@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/imC5X1HD)
 # Sistema de Gestión de Ventas e Inventario para una Tienda Ecológica
 
 ## 🌱 Introducción y Motivación
@@ -136,4 +137,3 @@ Además, deberán crear un método en la clase `Tienda` que permita inicializar 
 - Un archivo `main.cpp` que permita interactuar con el sistema mediante un menú claro y funcional.
 - Proyecto funcionando correctamente y compilando sin errores, incluyendo cada una de las funcionalidades solicitadas.
 - Commits periódicos mostrando el avance del proyecto en un repositorio.
-
