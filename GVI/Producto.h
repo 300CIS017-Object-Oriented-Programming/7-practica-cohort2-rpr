@@ -8,13 +8,16 @@ class Producto {
     private:
       string nombre;
       int codigo;
-      int precio;
+      float precio;
       int cantidad;
     public:
       Producto();
-      Producto(string nombre, int codigo, int precio, int cantidad);
+      Producto(string nombre, int codigo, float precio, int cantidad);
       bool descontarStock(int cantidad);
       void agregarStock(int cantidad);
+      string getNombre();
+      float getPrecio();
+      int getCantidad();
 };
 
 

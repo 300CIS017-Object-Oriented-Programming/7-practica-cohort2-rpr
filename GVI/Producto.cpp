@@ -9,7 +9,7 @@ Producto::Producto(){
     cantidad = 0;
 }
 
-Producto::Producto(string nombre, int codigo, int precio, int cantidad) : nombre(nombre), codigo(codigo), precio(precio), cantidad(cantidad){}
+Producto::Producto(string nombre, int codigo, float precio, int cantidad) : nombre(nombre), codigo(codigo), precio(precio), cantidad(cantidad){}
 
 bool Producto::descontarStock(int cantidad){
   bool retorno;
@@ -26,3 +26,9 @@ bool Producto::descontarStock(int cantidad){
 void Producto::agregarStock(int cantidad){
   Producto::cantidad+=cantidad;
 }
+
+string Producto::getNombre(){return nombre;}
+
+float Producto::getPrecio(){return precio;}
+
+int Producto::getCantidad(){return cantidad;}

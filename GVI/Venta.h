@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Producto.h"
 #include "Cliente.h"
+#include "ProductoVendido.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ class Venta {
     private:
       int id;
       Cliente *cliente;
-      vector<Producto> productosVendidos;
+      vector<ProductoVendido> productosVendidos;
     public:
       Venta();
       Venta(Cliente *cliente);

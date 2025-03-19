@@ -12,12 +12,13 @@ class Cliente {
     private:
       int id;
       string nombre;
-      vector<Venta> compras;
+      vector<Venta*> compras;
     public:
       Cliente();
       Cliente(int id, string nombre);
       void agregarCompra(Venta* venta);
       void mostrarHistorialCompras();
+      string getNombre();
 };
 
 
