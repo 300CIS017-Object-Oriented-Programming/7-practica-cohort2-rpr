@@ -1,5 +1,8 @@
 #include <iostream>
 #include "Tienda.h"
+
+using namespace std;
+
 void menu(Tienda &tienda) {
     string nom;
     int cod, stock, id, opc = 0;
@@ -9,7 +12,7 @@ void menu(Tienda &tienda) {
     do {
         cout<<"---Bienvenidos a nuestra Tienda---"<<endl;
         cout<<"1-Agregar Productos"<<endl;
-        cout<<"2-Agregar Cliente"<<endl;
+        cout<<"2-Agregar Cliente(Solo poner primer nombre)"<<endl;
         cout<<"3-Registrar Venta"<<endl;
         cout<<"4-Rebastecer Producto"<<endl;
         cout<<"5-Buscar Producto"<<endl;
@@ -17,7 +20,7 @@ void menu(Tienda &tienda) {
         cout<<"7-Listar Productos"<<endl;
         cout<<"8-Mostar Ventas"<<endl;
         cout<<"9-Calcular Valor Inventario"<<endl;
-
+        cout<<"Ponga -1 para salir"<<endl;
         cout<<"¿Que deseas hacer?"<<endl;
         cin>>opc;
         switch (opc) {
@@ -38,7 +41,7 @@ void menu(Tienda &tienda) {
                 cin>>nom;
                 cout<<"ID: ";
                 cin>>id;
-                tienda.agregarCliente(nom, cod);
+                tienda.agregarCliente(nom, id);
                 cout<<"Cliente agregado"<<endl;
                 break;
             case 3:

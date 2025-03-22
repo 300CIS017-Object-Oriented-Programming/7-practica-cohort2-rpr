@@ -34,7 +34,7 @@ float Venta::calcularTotal(){
 void Venta::mostrarDetalleVenta(){
   cout<<"ID: "<< id << ", Cliente: "<< cliente->getNombre()<<endl;
   for(int i = 0; i < productosVendidos.size(); i++){
-    cout<<"-"<<productosVendidos[i]->getProducto().getNombre()<<" "<<productosVendidos[i]->getProducto().getCantidad()<<" "<<productosVendidos[i]->calcularValor()<<endl;
+    cout<<"-"<<productosVendidos[i]->getProducto().getNombre()<<" "<<productosVendidos[i]->getCantidad()<<" "<<productosVendidos[i]->calcularValor()<<endl;
   }
   cout<<"Total: "<<calcularTotal()<<endl;
 }
