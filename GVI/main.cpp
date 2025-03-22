@@ -26,7 +26,8 @@ void menu(Tienda &tienda) {
         switch (opc) {
             case 1:
                 cout<<"Ingrese los datos del producto"<<endl<<"Nombre: ";
-                cin>>nom;
+                cin.ignore();
+                getline(cin,nom);
                 cout<<"Codigo: ";
                 cin>>cod;
                 cout<<"Precio: ";
@@ -38,7 +39,8 @@ void menu(Tienda &tienda) {
                 break;
             case 2:
                 cout<<"Ingrese los datos del cliente"<<endl<<"Nombre: ";
-                cin>>nom;
+                cin.ignore();
+                getline(cin,nom);
                 cout<<"ID: ";
                 cin>>id;
                 tienda.agregarCliente(nom, id);
