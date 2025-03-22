@@ -4,14 +4,22 @@
 
 using namespace std;
 
-ProductoVendido::ProductoVendido(Producto producto, int cantidad):producto(producto), cantidad(cantidad){}
+ProductoVendido::ProductoVendido(Producto* prod, int cantidad):producto(prod), cantidad(cantidad){}
 
-Producto ProductoVendido::getProducto(){return producto;}
+Producto ProductoVendido::getProducto(){return *producto;}
 
 int ProductoVendido::getCantidad(){return cantidad;}
 
 float ProductoVendido::calcularValor(){
   float total;
-  total = producto.getValor() * cantidad;
+  total = producto->getPrecio() * cantidad;
   return total;
+}
+
+void ProductoVendido::setProducto(Producto *producto){
+  ProductoVendido::producto = producto;
+}
+
+void ProductoVendido::setCantidad(int cantidad){
+  ProductoVendido::cantidad = cantidad;
 }

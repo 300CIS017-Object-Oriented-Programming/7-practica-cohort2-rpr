@@ -1,7 +1,5 @@
-#include <iostream>
-#include <iomanip>
-#include <vector>
 #include "Cliente.h"
+#include "Venta.h"
 
 Cliente::Cliente(){
   id = 0;
@@ -24,3 +22,20 @@ void Cliente::mostrarHistorialCompras(){
 }
 
 string Cliente::getNombre(){return nombre;}
+
+int Cliente::getId(){return id;}
+
+void Cliente::setNombre(string nombre){
+  Cliente::nombre = nombre;
+}
+
+void Cliente::setId(int id){
+  Cliente::id = id;
+}
+
+Cliente::~Cliente(){
+  for(int i = 0; i < compras.size(); i++){
+    delete compras[i];
+  }
+  compras.clear();
+}

@@ -4,21 +4,26 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Venta.h"
 
 using namespace std;
+
+class Venta;
 
 class Cliente {
     private:
       int id;
       string nombre;
-      vector<Venta*> compras;
+      vector<Venta *> compras;
     public:
       Cliente();
+      virtual ~Cliente();
       Cliente(int id, string nombre);
       void agregarCompra(Venta* venta);
       void mostrarHistorialCompras();
       string getNombre();
+      int getId();
+      void setNombre(string nombre);
+      void setId(int id);
 };
 
 

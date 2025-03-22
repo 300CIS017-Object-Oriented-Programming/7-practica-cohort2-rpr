@@ -27,8 +27,26 @@ void Producto::agregarStock(int cantidad){
   Producto::cantidad+=cantidad;
 }
 
+int Producto::getCodigo(){return codigo;}
+
 string Producto::getNombre(){return nombre;}
 
 float Producto::getPrecio(){return precio;}
 
 int Producto::getCantidad(){return cantidad;}
+
+void Producto::setNombre(string nombre){
+  Producto::nombre=nombre;
+}
+
+void Producto::setPrecio(float precio){
+  Producto::precio=precio;
+}
+
+void Producto::setCantidad(int cantidad){
+  Producto::cantidad=cantidad;
+}
+
+void Producto::setCodigo(int codigo){
+  Producto::codigo=codigo;
+}
